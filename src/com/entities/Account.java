@@ -1,19 +1,19 @@
 package com.entities;
 
-public class Conta {
+public class Account {
 	private int number;
 	private String holder;
 	private double balance;
 	
-	public Conta() {
+	public Account() {
 		
 	}
-	public Conta(int number, String holder, double balance) {
+	public Account(int number, String holder, double initialDeposit) {
 		this.holder = holder;
 		this.number = number;
-		this.balance = balance;
+		deposit(initialDeposit);
 	}
-	public Conta(int number, String holder) {
+	public Account(int number, String holder) {
 		this.holder = holder;
 		this.number = number;
 		
@@ -44,5 +44,14 @@ public class Conta {
 	
 	public void info() {
 		System.out.println("Updated account data:\nAccount "+number+", Holder: "+holder+", Balance: $ "+ String.format("%.2f", balance) );
+	}
+	
+	public String toString() {
+		return "Account " 
+				+ number
+				+ ", Holder: "
+				+ holder
+				+", Balance: $ "
+				+ String.format("%.2f", balance);
 	}
 }
